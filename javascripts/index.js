@@ -1,8 +1,20 @@
 window.onload = () => {
-    const $contactForm = $('#contact-form'); 
+    const $contactForm = $("#contact-section form"); 
+    const swiper = (elementId) => new Swiper(elementId, {
+        loop: true,
+        observer: true,
+        observeParents: true,
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+    });
+    const swiperEnterTheDj = swiper("#swiperEnterTheDj");
+    const swiperPoliceShooting = swiper("#swiperPoliceShooting");
+    const swiperPureAutoRepair = swiper("#swiperPureAutoRepair");
     const scrollMagicController = new ScrollMagic.Controller({addIndicators: false});
 
-    // animate navbar
+    // navbar
     new ScrollMagic.Scene({
         duration: 0,
         offset:80,
@@ -13,13 +25,13 @@ window.onload = () => {
     .setClassToggle(".navbar", "bg-dark")
     .addTo(scrollMagicController);
 
-    //animate navbar links
-    new TweenMax.staggerFrom(".nav-item, .navbar-bar", 0.5, {opacity: 0, y: -100}, -0.2)
+    // navbar links
+    gsap.fromTo(".nav-item, .navbar-bar", {y: -200}, {duration: 0.5, opacity: 1, stagger: -0.2, y: 0});
 
-    // animate home caption 
-    new TweenMax.staggerFrom($(".caption").children(), 0.5, {opacity: 0, y: 20, delay: 1}, 0.3);
+    // intro
+    gsap.fromTo($("#intro-section").children(), {y: 20}, {delay: 1, duration: 0.5, opacity: 1, stagger: 0.3, y: 0});
 
-    // animate about heading
+    // about section heading
     new ScrollMagic.Scene({
         duration: 0,
         offset: 0,
@@ -27,11 +39,11 @@ window.onload = () => {
         triggerHook: 0.8,
         reverse: false
     })
-    .setTween(new TweenMax.from('#about-heading', 0.5, {opacity: 0, y: 100}))
+    .setTween(gsap.from('#about-heading', {duration: 0.5, opacity: 0, y: 100}))
     .addTo(scrollMagicController);
 
-    // animate about icon box
-    $(".about-icon-box").each((index, object) => {
+    // about section articles
+    $("#about-section article").each((index, object) => {
         const xOffset = index % 2 === 0 ? -200 : 200;
         new ScrollMagic.Scene({
             duration: 0,
@@ -40,11 +52,11 @@ window.onload = () => {
             triggerHook: 0.8,
             reverse: false
         })
-        .setTween(new TweenMax.staggerFrom(object.children, 0.5, {opacity:0, x: xOffset, display: "none"}, 0.3))
+        .setTween(gsap.from(object.children, {display: "none", duration: 0.5, opacity:0, stagger: 0.3, x: xOffset}))
         .addTo(scrollMagicController);
     });
 
-    // animate about section hr
+    // about section hr
     new ScrollMagic.Scene({
         duration: 0,
         offset: 0,
@@ -52,11 +64,11 @@ window.onload = () => {
         triggerHook: 0.8,
         reverse: false
     })
-    .setTween(new TweenMax.from('#about-section hr', 0.5, {opacity: 0}))
+    .setTween(gsap.from('#about-section hr', {duration: 0.5, opacity: 0}))
     .addTo(scrollMagicController);
 
-    // animate about text
-    $(".about-text").each((index, object) => {
+    // about section text
+    $("#about-section:last-child > div").each((index, object) => {
         new ScrollMagic.Scene({
             duration: 0,
             offset: 0,
@@ -64,11 +76,11 @@ window.onload = () => {
             triggerHook: 0.8,
             reverse: false
         })
-        .setTween(new TweenMax.from(object, 1, {opacity:0, scale: 0}))
+        .setTween(gsap.from(object, {duration: 1, opacity:0, scale: 0}))
         .addTo(scrollMagicController);
     });
 
-    // animate resume section
+    // resume section image
     new ScrollMagic.Scene({
         duration: 0,
         offset: 150,
@@ -76,21 +88,21 @@ window.onload = () => {
         triggerHook: 0.5,
         reverse: false
     })
-    .setTween(new TweenMax.staggerFrom($("#resume-section").children(), 0.2, {opacity:0, yPercent: 30, delay: 0}, 0.2))
+    .setTween(gsap.from("#resume-section img", {duration: 0.3, opacity: 0, yPercent: 30}))
     .addTo(scrollMagicController);
 
-    // animate projects section
+    // project section articles
     new ScrollMagic.Scene({
         duration: 0,
         offset: 150,
-        triggerElement: "#project-samples-row",
+        triggerElement: "#project-section",
         triggerHook: 0.8,
         reverse: false
     })
-    .setTween(new TweenMax.staggerFrom($("#project-heading, .project-sample-card"), 0.4, {opacity:0, delay: 0}, 0.2))
+    .setTween(gsap.from("#project-section article", {duration: 0.5, opacity: 0, stagger: 0.2}))
     .addTo(scrollMagicController);
 
-    // animate contact section
+    // contact section form
     new ScrollMagic.Scene({
         duration: 0,
         offset: 150,
@@ -98,10 +110,10 @@ window.onload = () => {
         triggerHook: 0.8,
         reverse: false
     })
-    .setTween(new TweenMax.staggerFrom($("#contact-text, .form-group"), 0.2, {opacity:0, yPercent: 30}, 0.2))
+    .setTween(gsap.from("#contact-section p, .form-group, #contact-section button", {duration: 0.5, opacity:0, stagger: 0.2, yPercent: 30}))
     .addTo(scrollMagicController);
 
-    // animate footer text
+    // footer text
     new ScrollMagic.Scene({
         duration: 0,
         offset: 0,
@@ -109,10 +121,10 @@ window.onload = () => {
         triggerHook: 0.8,
         reverse: false
     })
-    .setTween(new TweenMax.from("footer p", 0.5, {opacity: 0, scale: 0}))
+    .setTween(gsap.from("footer p", {duration: 0.5, opacity: 0, scale: 0}))
     .addTo(scrollMagicController);
 
-    // animate footer links
+    // footer links
     new ScrollMagic.Scene({
         duration: 0,
         offset: 0,
@@ -120,14 +132,28 @@ window.onload = () => {
         triggerHook: 0.8,
         reverse: false
     })
-    .setTween(new TweenMax.staggerFrom(".footer-link", 0.2, {opacity: 0, delay: 0.2}, 0.2))
+    .setTween(gsap.from("footer a", {duration: 0.2, opacity: 0, delay: 0.2, stagger: 0.2}))
     .addTo(scrollMagicController);
 
-    $contactForm.submit((e) => {
-        e.preventDefault();
+    $("#project-section article").hover(
+        function() {
+            $(this).find("img").addClass("clear");
+            $(this).find("figcaption").removeClass("opacity-transparent");
+            $(this).find("figcaption button").css("bottom", "calc(50% - 40px)");
+            $(this).find("figcaption h1").css("top", "calc(50% - 40px)");
+        },
+        function() {
+            $(this).find("img").removeClass("clear");
+            $(this).find("figcaption").addClass("opacity-transparent");
+            $(this).find("figcaption button").css("bottom", "0");
+            $(this).find("figcaption h1").css("top", "0");
+        }     
+    );
+
+    $contactForm.submit((event) => {
+        event.preventDefault();
         // clear error messages
         $(".form-control").removeClass("is-invalid");
-        // send submission
         $.ajax({
             type: "POST",
             url: "contact.php",
@@ -135,22 +161,19 @@ window.onload = () => {
             dataType: "json",
             success: (data) => {
                 if (data.success) {
-                    let alertMessageHeader = '<div class="alert bg-info alert-dismissible fade show" role="alert">' +
-                    '<strong>Message sent!</strong>' +
-                    '<button type="button" class="close" data-dismiss="alert" aria-label="Close">' +
-                    '<span id="success-close" aria-hidden="true">&times;</span>' +
-                    '</button>';
+                    let alertMessage = '<div class="alert bg-info alert-dismissible fade show" role="alert">' +
+                        '<strong>Message sent!</strong>' +
+                        '<button type="button" class="close" data-dismiss="alert" aria-label="Close">' +
+                        '<span id="success-close" aria-hidden="true">&times;</span>' +
+                        '</button>';
                     // clear input fields
                     e.target.reset();
-                    // display message
-                    $("#contact-form-alert").html(alertMessageHeader);
-                    // automatically close success message header after 4 seconds
+                    $("#contact-form-alert").html(alertMessage);
                     setTimeout(() => {
                         $(".alert").alert("close");
                     }, 4000);
                 } else {
                     let errors = data.errors;
-                    // show error messages
                     if (errors.name) {
                         $("#name").addClass("is-invalid");
                         $("#name-error").text(errors.name);
@@ -170,14 +193,12 @@ window.onload = () => {
                 }
             },
             error: (error) => {
-                let alertMessageHeader = '<div class="alert bg-danger alert-dismissible fade show" role="alert">' +
-                '<strong>Message could not be sent! Try again.</strong>' +
-                '<button type="button" class="close" data-dismiss="alert" aria-label="Close">' +
-                '<span id="success-close" aria-hidden="true">&times;</span>' +
-                '</button>';
-                // display message
-                $("#contact-form-alert").html(alertMessageHeader);
-                // automatically close success message header after 4 seconds
+                let alertMessage = '<div class="alert bg-danger alert-dismissible fade show" role="alert">' +
+                    '<strong>Message could not be sent! Try again.</strong>' +
+                    '<button type="button" class="close" data-dismiss="alert" aria-label="Close">' +
+                    '<span id="success-close" aria-hidden="true">&times;</span>' +
+                    '</button>';
+                $("#contact-form-alert").html(alertMessage);
                 setTimeout(() => {
                     $(".alert").alert("close");
                 }, 4000);
@@ -185,4 +206,14 @@ window.onload = () => {
             }
         });
     });
+
+    // delay slides and video embed loading for page to load more smoothly
+    setTimeout(() => {
+    // add image slides for chowbox project modal
+    for (i = 1; i <= 247; i++) {
+        $("#swiperChowbox .swiper-wrapper").append(`<div class="swiper-slide"><img src="images/chowbox/image${i}.jpg" alt="chowbox"/></div>`)
+    }
+    swiper("#swiperChowbox");
+    document.getElementById("video-slide").innerHTML = '<iframe src="https://www.youtube.com/embed/9UJYzSgAA-g" frameborder="0" allowfullscreen></iframe>';    
+    }, 2000);
 };
