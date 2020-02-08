@@ -68,7 +68,7 @@ window.onload = () => {
     .addTo(scrollMagicController);
 
     // about section text
-    $("#about-section:last-child > div").each((index, object) => {
+    $("#about-section div:last-child").each((index, object) => {
         new ScrollMagic.Scene({
             duration: 0,
             offset: 0,
