@@ -9,6 +9,7 @@ window.onload = () => {
           prevEl: '.swiper-button-prev',
         },
     });
+    const swiperBarn2Door = swiper("#swiperBarn2Door");
     const swiperEnterTheDj = swiper("#swiperEnterTheDj");
     const swiperPoliceShooting = swiper("#swiperPoliceShooting");
     const swiperPureAutoRepair = swiper("#swiperPureAutoRepair");

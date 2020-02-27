@@ -142,10 +142,21 @@
       <div>
         <article>
           <figure>
+            <img src="images/barn2door/barn2door.jpg" alt="barn2door project"/>
+            <figcaption class="opacity-transparent">
+              <h1>Barn2Door</h1>
+              <button class="button" data-toggle="modal" data-target="#project1-modal">
+                LEARN MORE
+              </button>
+            </figcaption>
+          </figure>
+        </article>
+        <article>
+          <figure>
             <img src="images/enterthedj/enterthedj.jpg" alt="enter the dj project"/>
             <figcaption class="opacity-transparent">
               <h1>Enter the DJ</h1>
-              <button class="button" data-toggle="modal" data-target="#project1-modal">
+              <button class="button" data-toggle="modal" data-target="#project2-modal">
                 LEARN MORE
               </button>
             </figcaption>
@@ -156,7 +167,7 @@
             <img src="images/chowbox/chowbox.jpg" alt="chowbox project"/>
             <figcaption class="opacity-transparent">
               <h1>ChowBox</h1>
-              <button class="button" data-toggle="modal" data-target="#project2-modal">
+              <button class="button" data-toggle="modal" data-target="#project3-modal">
                 LEARN MORE
               </button>
             </figcaption>
@@ -167,7 +178,7 @@
             <img src="images/police_shooting/police_shooting.jpg" alt="police shooting project"/>
             <figcaption class="opacity-transparent">
               <h1>Police Shootings</h1>
-              <button class="button" data-toggle="modal" data-target="#project3-modal">
+              <button class="button" data-toggle="modal" data-target="#project4-modal">
                 LEARN MORE
               </button>
             </figcaption>
@@ -178,7 +189,7 @@
             <img src="images/pure_auto/pure_auto.jpg" alt="pure auto repair project"/>
             <figcaption class="opacity-transparent">
               <h1>Pure Auto Repair</h1>
-              <button class="button" data-toggle="modal" data-target="#project4-modal">
+              <button class="button" data-toggle="modal" data-target="#project5-modal">
                 LEARN MORE
               </button>
             </figcaption>
@@ -262,6 +273,53 @@
   <div class="modal fade project-modal" id="project1-modal">
     <div class="modal-dialog">
       <div class="modal-content">
+        <div id="swiperBarn2Door" class="swiper-container">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img src="images/barn2door/barn2door1.jpg"/>
+            </div>
+            <div class="swiper-slide">
+              <img src="images/barn2door/barn2door2.jpg"/>
+            </div>
+            <div class="swiper-slide">
+              <img src="images/barn2door/barn2door3.jpg"/>
+            </div>
+            <div class="swiper-slide">
+              <img src="images/barn2door/barn2door4.jpg"/>
+            </div>
+            <div class="swiper-slide">
+              <img src="images/barn2door/barn2door5.jpg"/>
+            </div>
+            <div class="swiper-slide">
+              <img src="images/barn2door/barn2door6.jpg"/>
+            </div>
+          </div>
+          <div class="swiper-button swiper-button-prev"></div>
+          <div class="swiper-button swiper-button-next"></div>
+        </div>
+        <div class="modal-body">
+          <h2>Barn2Door</h2>
+          <p class="project-tools">JavaScript, Node.js, React, Redux, Sass, PostgreSQL, Stripe API, Mailchimp API</p>
+          <p>
+            Barn2door is a platform that helps facilitate the sales of farm fresh food from sellers like farmers, ranchers, fishermen, and food producers to buyers such as restaurants, chefs, caterers and consumers.
+          </p>
+          <p>
+            Barn2door is a software as a service company that offers flexible solutions such as custom websites, mobile apps and an online marketplace to help sellers list and sell their food items.
+          </p>
+          <div>
+            <a class="button" href="https://www.barn2door.com" target="_blank">
+              view <i class="fas fa-external-link-alt"></i>
+            </a>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade project-modal" id="project2-modal">
+    <div class="modal-dialog">
+      <div class="modal-content">
         <div id="swiperEnterTheDj" class="swiper-container">
           <div class="swiper-wrapper">
             <div class="swiper-slide">
@@ -286,7 +344,7 @@
         <div class="modal-body">
           <h2>Enter The DJ</h2>
           <p class="project-tools">
-            JavaScript, React, Redux, Sass, Node.js, Spotify api, web scraping
+            JavaScript, React, Redux, Sass, Node.js, Spotify API, web scraping
           </p>
           <p>
             A web application that uses Spotify's API to allow users to browse, search, and listen to music, view
@@ -306,7 +364,7 @@
     </div>
   </div>
 
-  <div class="modal fade project-modal" id="project2-modal">
+  <div class="modal fade project-modal" id="project3-modal">
     <div class="modal-dialog">
       <div class="modal-content">
         <div id="swiperChowbox" class="swiper-container">
@@ -351,7 +409,7 @@
     </div>
   </div>
 
-  <div class="modal fade project-modal" id="project3-modal">
+  <div class="modal fade project-modal" id="project4-modal">
     <div class="modal-dialog">
       <div class="modal-content">
         <div id="swiperPoliceShooting" class="swiper-container">
@@ -374,7 +432,7 @@
         </div>
         <div class="modal-body">
           <h2>Police Shootings</h2>
-          <p class="project-tools">HTML, CSS, JavaScript, Google maps api</p>
+          <p class="project-tools">HTML, CSS, JavaScript, Google maps API</p>
           <p>Recent crowd sourced police shooting incidents overlaid on a web map which allows users to toggle map
             markers based on criteria.</p>
           <div>
@@ -391,7 +449,7 @@
     </div>
   </div>
 
-  <div class="modal fade project-modal" id="project4-modal">
+  <div class="modal fade project-modal" id="project5-modal">
     <div class="modal-dialog">
       <div class="modal-content">
         <div id="swiperPureAutoRepair" class="swiper-container">
@@ -414,7 +472,7 @@
         </div>
         <div class="modal-body">
           <h2>Pure Auto Repair</h2>
-          <p class="project-tools">HTML, CSS, JavaScript, jQuery, Google maps api</p>
+          <p class="project-tools">HTML, CSS, JavaScript, jQuery, Google maps API</p>
           <p>Pure Auto Repair is a light to medium duty automotive services and repair provider located in the city of
             Seattle. An alternative to the dealership and national auto repair chains with-out the fuss.</p>
           <div>
