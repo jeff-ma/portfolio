@@ -210,11 +210,10 @@ window.onload = () => {
 
     // delay slides and video embed loading for page to load more smoothly
     setTimeout(() => {
-    // add image slides for chowbox project modal
-    for (i = 1; i <= 247; i++) {
-        $("#swiperChowbox .swiper-wrapper").append(`<div class="swiper-slide"><img src="images/chowbox/image${i}.jpg" alt="chowbox"/></div>`)
-    }
-    swiper("#swiperChowbox");
-    document.getElementById("video-slide").innerHTML = '<iframe src="https://www.youtube.com/embed/9UJYzSgAA-g" frameborder="0" allowfullscreen></iframe>';    
+        // add image slides for chowbox project modal
+        for (let i = 1; i <= 247; i++) {
+            $("#swiperChowbox .swiper-wrapper").append(`<div class="swiper-slide"><img src="images/chowbox/image${i}.jpg" alt="chowbox"/></div>`)
+        }
+        swiper("#swiperChowbox");
     }, 2000);
 };

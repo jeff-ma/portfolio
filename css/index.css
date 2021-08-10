@@ -282,11 +282,9 @@ hr {
 #video-slide {
     padding-top: 75%;
 }
-#video-slide iframe {
+#video-slide video {
     position: absolute;
-    left: 0;
     top: 0;
-    height: 100%;
     width: 100%;
 }
 /* contact-section */
